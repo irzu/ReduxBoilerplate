@@ -1,7 +1,6 @@
 import React from 'react';
 import { useAppSelector } from 'src/store';
 import { CountriesList } from '../CountriesList/CountriesList';
-import { CountryInfo } from '../CountryInfo/CountryInfo';
 import classNames from './CountriesApp.module.css';
 
 export const CountriesApp = () => {
@@ -14,7 +13,7 @@ export const CountriesApp = () => {
                     <CountriesList/>
                 </div>
                 <div className="col-sm-8">
-                    <CountryInfo selectedCountry={selectedCountry}/>
+
                 </div>
             </div>
         </div>
