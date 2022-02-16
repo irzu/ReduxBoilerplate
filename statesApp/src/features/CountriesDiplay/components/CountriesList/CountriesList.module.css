@@ -1,0 +1,12 @@
+.item {
+    padding: 20px 0;
+}
+
+.subItem {
+    display: inline-block;
+}
+
+.list {
+    height: 60vh;
+    overflow-y: scroll;
+}
