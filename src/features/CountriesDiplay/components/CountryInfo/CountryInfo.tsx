@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'src/store';
 import { getStates } from '../../countriesAPI';
 import { CountriesState, StateInfo } from '../../types';
