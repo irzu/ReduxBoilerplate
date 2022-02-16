@@ -12,5 +12,7 @@ export type EquationResult = {
 export type Solution = EquationParams & EquationResult;
 
 export type SolverState = {
-    solutions: Solution[]
+    solutions: Solution[],
+    isProcessing: boolean,
+    processingError: string
 };

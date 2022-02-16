@@ -1,15 +1,26 @@
 import React, { useState } from 'react';
-import { useAppDispatch } from 'src/store';
-import { getSolution } from '../../solverSlice';
+import { useAppDispatch, useAppSelector } from 'src/store';
+import { getSolutionAsync } from '../../common/utils/solutionProcessor';
 
 export const EquationInput = () => {
     const [ inputState, setInputState ] = useState({a: '', b: '', c: ''});
+    const { isProcessing, processingError } = useAppSelector(state => state.solver);
     const dispatch = useAppDispatch();
 
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
         const { name, value } = e.currentTarget; 
         setInputState(prevState => ({...prevState, [name]: value}));
     };
+
+    const renderLoadingMessage = () => (
+        <div className='mt-3'>Calculating, please wait...</div>
+    );
+
+    const renderErrorMessage = () => (
+        <div className='mt-3 text-danger'>
+            {`Calculation failed. Error code: ${processingError}`}
+        </div>
+    );
 
     return (
         <div>
@@ -24,11 +35,15 @@ export const EquationInput = () => {
             </div>
             <button 
                 className='btn btn-primary mt-3'
-                onClick={() => dispatch(getSolution({a: Number(inputState.a), b: Number(inputState.b), c: Number(inputState.c)}))} 
+                onClick={() => dispatch(getSolutionAsync({a: Number(inputState.a), b: Number(inputState.b), c: Number(inputState.c)}))} 
                 disabled={!inputState.a || !inputState.b || !inputState.c}
             >
                 Solve!
             </button>
+            <div>
+                { isProcessing && renderLoadingMessage() }
+                { processingError && renderErrorMessage() }
+            </div>
         </div>
     );
 };
