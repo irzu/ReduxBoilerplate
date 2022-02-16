@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'src/store';
 import { getStates } from '../../countriesAPI';
-import { CountriesState, StateInfo } from '../../types';
+import { CountriesState, CountryInfoProps, StateInfo } from '../../types';
 import classNames from './CountryInfo.module.css';
 
-export const CountryInfo = () => {
-
-    const { countryInfo, isLoadingStates, errorLoadingStates, selectedCountry } = useAppSelector(state => state.countries);
+export const CountryInfo = (props: CountryInfoProps) => {
+    const { selectedCountry } = props;
+    const { countryInfo, isLoadingStates, errorLoadingStates,  } = useAppSelector(state => state.countries);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
