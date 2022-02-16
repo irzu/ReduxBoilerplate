@@ -1,12 +1,9 @@
-import { getCountries, getStates } from './countriesAPI';
+import { getStates } from './countriesAPI';
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CountriesState, Country } from './types';
+import { CountriesState } from './types';
 
 const initialState: CountriesState = {
-    countries: [],
-    isLoadingCountries: false,
-    errorLoadingCountries: '',
-    selectedCountry: '',
+    selectedCountry: 'United States',
     countryInfo: {
         data: {
             states: []
@@ -25,22 +22,9 @@ const countriesSlice = createSlice({
         }
     },
     extraReducers: {
-        [getCountries.pending.type]: (state) => {
-            state.isLoadingCountries = true;
-            state.errorLoadingCountries = '';
-        },
-        [getCountries.fulfilled.type]: (state, action: PayloadAction<Country[]>) => {
-            state.isLoadingCountries = false;
-            state.countries = action.payload.sort((a,b) => (a.name > b.name) ? 1 : -1);
-        },        
-        [getCountries.rejected.type]: (state, action) => {
-            state.isLoadingCountries = false;
-            state.errorLoadingCountries = action.payload ? action.payload.response.statusText : action.error.message;
-        },
-
         [getStates.pending.type]: (state) => {
             state.isLoadingStates = true;
-            state.errorLoadingCountries = '';
+            state.errorLoadingStates = '';
         },
         [getStates.fulfilled.type]: (state, action: PayloadAction<CountriesState["countryInfo"]>) => {
             state.isLoadingStates = false;

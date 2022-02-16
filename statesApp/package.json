@@ -6,7 +6,7 @@
   "author": "Irek Żuchowski <irek@atarnia.com>",
   "main": "src/index.tsx",
   "scripts": {
-    "start": "webpack-cli serve --mode=development --env development --open --hot --port 3005",
+    "start": "webpack-cli serve --mode=development --env development --open --hot --port 3006",
     "build": "webpack --mode=production --env production",
     "build:dev": "webpack --mode=development --env development --progress",
     "lint": "node node_modules/eslint/bin/eslint.js --ignore-path .eslintignore ./src",

@@ -1,18 +1,16 @@
 import React from "react";
 import './App.css';
-import { CountriesApp } from "./features/CountriesDiplay/components/CountriesApp/CountriesApp";
-import { HelloWorld } from "./features/HelloWorld/components/HelloWorld/HelloWorld";
-import { Solver } from "./features/QuadraticEquationSolver/components/Solver/Solver";
+import { CountryInfo } from "./features/CountriesDiplay/components/CountryInfo/CountryInfo";
+import { useAppSelector } from "./store";
 
-const App = () => (
-    <>
-        <header>Redux Boilerplate</header>
+const App = () => {
+    const { selectedCountry } = useAppSelector(state => state.countries);
+    
+    return (
         <div className="main">
-            {/* <HelloWorld/> */}
-            {/* <Solver /> */}
-            <CountriesApp />
+            <CountryInfo selectedCountry={selectedCountry} />
         </div>
-    </>
-);
+    );
+};
 
 export default App;

@@ -19,9 +19,6 @@ export type StateInfo = {
 }
 
 export type CountriesState = {
-    countries: Country[],
-    isLoadingCountries: boolean,
-    errorLoadingCountries: string,
     selectedCountry: string,
     countryInfo: {
         data: {
