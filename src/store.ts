@@ -3,10 +3,11 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import helloWorldReducer from './features/HelloWorld/helloWorldSlice';
 import solverReducer from './features/QuadraticEquationSolver/solverSlice';
-
+import countriesReducer from './features/CountriesDiplay/countriesSlice';
 const reducer = {
     helloWorld: helloWorldReducer,
-    solver: solverReducer
+    solver: solverReducer,
+    countries: countriesReducer
 };
 
 const devTools = process.env.NODE_ENV === "development" ? [logger]: [];
