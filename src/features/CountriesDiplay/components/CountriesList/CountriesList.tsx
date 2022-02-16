@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'src/store';
 import { getCountries } from '../../countriesAPI';
 import { Country as CountryType } from '../../types';
@@ -14,10 +14,10 @@ export const CountriesList = () => {
 
     const renderCountryInfo = (country: CountryType) => (
         <div className={classNames.item} key={country.id}>
-            <div className={classNames.subItem} style={{minWidth:180}}>
-                <img width={150} src={country.media.flag} alt="flag"/>
+            <div className={`col-sm-3 ${classNames.subItem}`}>
+                <img width={30} src={country.media.flag} alt="flag" style={{marginBottom:20}} />
             </div>
-            <div className={classNames.subItem}>
+            <div className={`col-sm-9 ${classNames.subItem}`}>
                 <div><b>{country.name}</b></div>
                 <div>{country.capital}</div>
             </div>
@@ -28,7 +28,9 @@ export const CountriesList = () => {
         <div>
             {errorLoadingCountries && <div>Error: {errorLoadingCountries}</div>}
             {isLoadingCountries && <div>Loading...</div>}
-            {countries.map(country => renderCountryInfo(country))}
+            <div className={classNames.list}>
+                {countries.map(country => renderCountryInfo(country))}
+            </div>
         </div>
     );
 };

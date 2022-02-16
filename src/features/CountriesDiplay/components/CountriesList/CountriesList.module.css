@@ -5,3 +5,8 @@
 .subItem {
     display: inline-block;
 }
+
+.list {
+    height: 60vh;
+    overflow-y: scroll;
+}
