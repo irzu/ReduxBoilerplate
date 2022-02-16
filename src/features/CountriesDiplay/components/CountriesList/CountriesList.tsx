@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'src/store';
 import { getCountries } from '../../countriesAPI';
+import { setSelectedCountry } from '../../countriesSlice';
 import { Country as CountryType } from '../../types';
 import classNames from './CountriesList.module.css';
 
@@ -13,7 +14,7 @@ export const CountriesList = () => {
     const dispatch = useAppDispatch();
 
     const renderCountryInfo = (country: CountryType) => (
-        <div className={classNames.item} key={country.id}>
+        <div className={classNames.item} key={country.id} onClick={() => dispatch(setSelectedCountry(country.name))}>
             <div className={`col-sm-3 ${classNames.subItem}`}>
                 <img width={30} src={country.media.flag} alt="flag" style={{marginBottom:20}} />
             </div>
