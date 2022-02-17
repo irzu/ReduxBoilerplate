@@ -4,4 +4,4 @@ services:
       build:
         context: .
       ports:
-        - 3005:3005
+        - 3006:3006

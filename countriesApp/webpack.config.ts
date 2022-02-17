@@ -55,7 +55,7 @@ const webpackConfig = (env):Configuration => ({
         new ModuleFederationPlugin({
             name: "countriesApp",
             remotes: {
-                statesApp: 'statesApp'
+                provincesApp: 'provincesApp'
             },
             shared: {
                 "react": { singleton: true, eager: true, requiredVersion: packageJson.dependencies.react },

@@ -52,11 +52,11 @@ const webpackConfig = (env):Configuration => ({
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: "statesApp",
-            library: { type: "var", name: "statesApp" },
-            filename: "statesApp.js",
+            name: "provincesApp",
+            library: { type: "var", name: "provincesApp" },
+            filename: "provincesApp.js",
             exposes: {
-                './StatesApp': './src/RemoteAppWrapper',
+                './ProvincesApp': './src/RemoteAppWrapper',
             },
             shared: {
                 "react": { singleton: true, eager: true, requiredVersion: packageJson.dependencies.react },

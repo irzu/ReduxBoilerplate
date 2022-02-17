@@ -7,7 +7,7 @@ import ErrorBoundary from 'src/common/utils/ErrorBoundary';
 
 export const CountriesApp = () => {
     const { selectedCountry } = useAppSelector(state => state.countries);
-    const StatesApp = React.lazy(dynamicImport('statesApp', './StatesApp'));
+    const ProvincesApp = React.lazy(dynamicImport('provincesApp', './ProvincesApp'));
 
     return (
         <div className={classNames.wrapper}>
@@ -19,7 +19,7 @@ export const CountriesApp = () => {
                 <div className="col-sm-8">
                     <ErrorBoundary>
                         <React.Suspense fallback={<div>Initilaizing app...</div>}>
-                            <StatesApp selectedCountry={selectedCountry}/>
+                            <ProvincesApp selectedCountry={selectedCountry}/>
                         </React.Suspense>
                     </ErrorBoundary>
                 </div>
