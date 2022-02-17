@@ -3,6 +3,9 @@ import webpack, { Configuration } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
+import ModuleFederationPlugin from "webpack/lib/container/ModuleFederationPlugin";
+import packageJson from "./package.json";
+
 
 const webpackConfig = (env):Configuration => ({
     entry: "./src/index.tsx",
@@ -49,6 +52,18 @@ const webpackConfig = (env):Configuration => ({
         ]
     },
     plugins: [
+        new ModuleFederationPlugin({
+            name: "countriesApp",
+            remotes: {
+                statesApp: 'statesApp'
+            },
+            shared: {
+                "react": { singleton: true, eager: true, requiredVersion: packageJson.dependencies.react },
+                "react-dom": { singleton: true, eager: true, requiredVersion: packageJson.dependencies["react-dom"] },
+                "react-redux": { singleton: true, eager: true, requiredVersion: packageJson.dependencies["react-redux"] },
+                "redux": { singleton: true, eager: true, requiredVersion: packageJson.dependencies.redux },
+            },
+        }),
         new HtmlWebpackPlugin(
             Object.assign(
                 {},
