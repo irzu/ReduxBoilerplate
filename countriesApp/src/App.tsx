@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import { CountriesApp } from "./features/CountriesDiplay/components/CountriesApp/CountriesApp";
+import { CountriesApp } from "./features/Countries/components/CountriesApp/CountriesApp";
 
 const App = () => (
     <>

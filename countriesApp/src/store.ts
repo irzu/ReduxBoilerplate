@@ -1,7 +1,7 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import countriesReducer from './features/CountriesDiplay/countriesSlice';
+import countriesReducer from './features/Countries/countriesSlice';
 const reducer = {
     countries: countriesReducer
 };
