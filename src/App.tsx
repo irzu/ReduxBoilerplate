@@ -10,9 +10,7 @@ const App = () => (
         <div className="main">
             {/* <HelloWorld/> */}
             {/* <Solver /> */}
-            <div className="wrapper">
-                <CountriesList />
-            </div>
+            <CountriesList />
         </div>
     </>
 );

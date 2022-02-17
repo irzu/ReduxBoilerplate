@@ -11,3 +11,10 @@
     height: 60vh;
     overflow-y: scroll;
 }
+
+.wrapper {
+    padding: 2rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+  }
+  

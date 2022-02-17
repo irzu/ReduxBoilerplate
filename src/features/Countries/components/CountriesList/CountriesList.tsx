@@ -25,7 +25,7 @@ export const CountriesList = () => {
     );
     
     return (
-        <div>
+        <div className={classNames.wrapper}>
             {errorLoadingCountries && <div>Error: {errorLoadingCountries}</div>}
             {isLoadingCountries && <div>Loading...</div>}
             <div className={classNames.list}>
