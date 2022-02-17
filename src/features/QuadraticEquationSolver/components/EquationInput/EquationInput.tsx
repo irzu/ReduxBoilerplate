@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAppDispatch, useAppSelector } from 'src/store';
+import { useAppDispatch, useAppSelector } from '../../../../store';
 import { getSolutionAsync } from '../../common/utils/solutionProcessor';
 
 export const EquationInput = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppSelector } from 'src/store';
+import { useAppSelector } from '../../../../store';
 import { Solution } from '../../types';
 
 export const SolutionDisplay = () => {

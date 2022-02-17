@@ -1,10 +1,10 @@
 import React from "react";
-import './App.css';
-import { HelloWorld } from "./features/HelloWorld/components/HelloWorld/HelloWorld";
-import { Solver } from "./features/QuadraticEquationSolver/components/Solver/Solver";
+// import { HelloWorld } from "./features/HelloWorld/components/HelloWorld/HelloWorld";
+// import { Solver } from "./features/QuadraticEquationSolver/components/Solver/Solver";
 import { CountriesList } from "./features/Countries/components/CountriesList/CountriesList";
 import { ProvinceList } from "./features/Provinces/components/ProvinceList/ProvinceList";
 import { useAppSelector } from "./store";
+import './App.css';
 
 const App = () => {
     const { selectedCountry } = useAppSelector(state => state.countries);
