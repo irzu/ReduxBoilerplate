@@ -7,7 +7,6 @@ const App = (props: ProvincesProps) => {
     const { selectedCountry } = props;
     return (
         <>
-            <h4>{selectedCountry}</h4>
             <div className="main">
                 <ProvinceList selectedCountry={selectedCountry} />            
             </div>
