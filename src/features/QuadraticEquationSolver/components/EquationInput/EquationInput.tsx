@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAppDispatch } from 'src/store';
+import { useAppDispatch } from '../../../../store';
 import { getSolution } from '../../solverSlice';
 
 export const EquationInput = () => {
