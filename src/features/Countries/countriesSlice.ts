@@ -1,4 +1,4 @@
-import { getCountries, getStates } from './countriesAPI';
+import { getCountries } from './countriesAPI';
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CountriesState, Country } from './types';
 
@@ -6,14 +6,7 @@ const initialState: CountriesState = {
     countries: [],
     isLoadingCountries: false,
     errorLoadingCountries: '',
-    selectedCountry: '',
-    countryInfo: {
-        data: {
-            states: []
-        }
-    },
-    isLoadingStates: false,
-    errorLoadingStates: ''
+    selectedCountry: ''
 };
 
 const countriesSlice = createSlice({
@@ -36,19 +29,6 @@ const countriesSlice = createSlice({
         [getCountries.rejected.type]: (state, action) => {
             state.isLoadingCountries = false;
             state.errorLoadingCountries = action.payload ? action.payload.response.statusText : action.error.message;
-        },
-
-        [getStates.pending.type]: (state) => {
-            state.isLoadingStates = true;
-            state.errorLoadingCountries = '';
-        },
-        [getStates.fulfilled.type]: (state, action: PayloadAction<CountriesState["countryInfo"]>) => {
-            state.isLoadingStates = false;
-            state.countryInfo = action.payload;
-        },        
-        [getStates.rejected.type]: (state, action) => {
-            state.isLoadingStates = false;
-            state.errorLoadingStates = action.payload ? action.payload.response.statusText : action.error.message;
         }
     }
 });
