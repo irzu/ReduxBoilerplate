@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from 'src/store';
+import { useAppDispatch, useAppSelector } from '../../../../store';
 import { getCountries } from '../../countriesAPI';
 import { Country as CountryType } from '../../types';
 import classNames from './CountriesList.module.css';

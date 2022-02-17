@@ -1,8 +1,8 @@
 import React from "react";
-import './App.css';
+// import { HelloWorld } from "./features/HelloWorld/components/HelloWorld/HelloWorld";
+// import { Solver } from "./features/QuadraticEquationSolver/components/Solver/Solver";
 import { CountriesList } from "./features/Countries/components/CountriesList/CountriesList";
-import { HelloWorld } from "./features/HelloWorld/components/HelloWorld/HelloWorld";
-import { Solver } from "./features/QuadraticEquationSolver/components/Solver/Solver";
+import './App.css';
 
 const App = () => (
     <>
