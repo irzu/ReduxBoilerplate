@@ -1,6 +1,6 @@
 import React from "react";
-import './App.css';
 import { HelloWorld } from "./features/HelloWorld/components/HelloWorld/HelloWorld";
+import './App.css';
 
 const App = () => (
     <>
