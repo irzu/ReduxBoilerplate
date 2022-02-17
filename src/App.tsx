@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import { CountriesApp } from "./features/Countries/components/CountriesApp/CountriesApp";
+import { CountriesList } from "./features/Countries/components/CountriesList/CountriesList";
 import { HelloWorld } from "./features/HelloWorld/components/HelloWorld/HelloWorld";
 import { Solver } from "./features/QuadraticEquationSolver/components/Solver/Solver";
 
@@ -10,7 +10,9 @@ const App = () => (
         <div className="main">
             {/* <HelloWorld/> */}
             {/* <Solver /> */}
-            <CountriesApp />
+            <div className="wrapper">
+                <CountriesList />
+            </div>
         </div>
     </>
 );
