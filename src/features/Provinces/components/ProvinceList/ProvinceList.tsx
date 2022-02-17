@@ -8,7 +8,6 @@ export const ProvinceList = (props: ProvincesProps) => {
     const { selectedCountry } = props;
     const { provincesInfo, isLoadingProvinces, errorLoadingProvinces } = useAppSelector(state => state.provinces);
     const dispatch = useAppDispatch();
-    console.log('sss', selectedCountry);
 
     useEffect(() => {
         if (selectedCountry) dispatch(getStates({selectedCountry}));
