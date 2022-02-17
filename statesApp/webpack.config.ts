@@ -3,6 +3,8 @@ import webpack, { Configuration } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
+import ModuleFederationPlugin from "webpack/lib/container/ModuleFederationPlugin";
+import packageJson from "./package.json";
 
 const webpackConfig = (env):Configuration => ({
     entry: "./src/index.tsx",
@@ -13,7 +15,7 @@ const webpackConfig = (env):Configuration => ({
     },
     output: {
         path: path.join(__dirname, "/dist"),
-        publicPath: "/",
+        publicPath: "http://localhost:3006/",
         filename: "static/js/app.[contenthash:8].js",
         chunkFilename: "static/js/app.[contenthash:8].chunk.js",
         globalObject: "this"    
@@ -49,11 +51,25 @@ const webpackConfig = (env):Configuration => ({
         ]
     },
     plugins: [
+        new ModuleFederationPlugin({
+            name: "statesApp",
+            library: { type: "var", name: "statesApp" },
+            filename: "statesApp.js",
+            exposes: {
+                './StatesApp': './src/RemoteAppWrapper',
+            },
+            shared: {
+                "react": { singleton: true, eager: true, requiredVersion: packageJson.dependencies.react },
+                "react-dom": { singleton: true, eager: true, requiredVersion: packageJson.dependencies["react-dom"] },
+                "react-redux": { singleton: true, eager: true, requiredVersion: packageJson.dependencies["react-redux"] },
+                "redux": { singleton: true, eager: true, requiredVersion: packageJson.dependencies.redux },
+            },
+        }),
         new HtmlWebpackPlugin(
             Object.assign(
                 {},
                 {
-                    title: "Onboarding App",
+                    title: "States App",
                     template: "./public/index.html",
                     isProduction: env.production,
                     chunks: ["main"]

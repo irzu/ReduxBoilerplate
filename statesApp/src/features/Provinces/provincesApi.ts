@@ -1,10 +1,10 @@
-import { CountryInfoProps } from './types';
+import { ProvincesProps } from './types';
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getStates = createAsyncThunk(
-    'countries/getStates',
-    (payload: CountryInfoProps , thunkAPI) => axios
+    'provinces/getStates',
+    (payload: ProvincesProps , thunkAPI) => axios
         .post(`https://countriesnow.space/api/v0.1/countries/states`, {country: payload.selectedCountry})
         .then(response => response.data)
         .catch(error => {

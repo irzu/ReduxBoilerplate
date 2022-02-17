@@ -1,15 +1,17 @@
 import React from "react";
+import { ProvinceList } from "./features/Provinces/components/ProvinceList/ProvinceList";
+import { ProvincesProps } from "./features/Provinces/types";
 import './App.css';
-import { CountryInfo } from "./features/CountriesDiplay/components/CountryInfo/CountryInfo";
-import { useAppSelector } from "./store";
 
-const App = () => {
-    const { selectedCountry } = useAppSelector(state => state.countries);
-    
+const App = (props: ProvincesProps) => {
+    const { selectedCountry } = props;
     return (
-        <div className="main">
-            <CountryInfo selectedCountry={selectedCountry} />
-        </div>
+        <>
+            <h4>{selectedCountry}</h4>
+            <div className="main">
+                <ProvinceList selectedCountry={selectedCountry} />            
+            </div>
+        </>
     );
 };
 

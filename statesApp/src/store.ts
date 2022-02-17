@@ -1,9 +1,9 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import countriesReducer from './features/CountriesDiplay/countriesSlice';
+import provincesReducer from './features/Provinces/provincesSlice';
 const reducer = {
-    countries: countriesReducer
+    provinces: provincesReducer
 };
 
 const devTools = process.env.NODE_ENV === "development" ? [logger]: [];
