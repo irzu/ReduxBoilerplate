@@ -18,9 +18,11 @@ const App = () => {
                 <div className='wrapper'>
                     <div className='row'>
                         <div className="col-sm-4">
+                            <h4>Countries</h4>
                             <CountriesList/>
                         </div>
                         <div className="col-sm-8">
+                            <h4>Provinces/states {selectedCountry ? `of ${selectedCountry}` : ''}</h4>
                             <ProvinceList selectedCountry={selectedCountry}/>
                         </div>
                     </div>
