@@ -9,7 +9,7 @@ export const SolutionDisplay = () => {
         const { a, b, c, root1, root2 } = solution;
 
         return (
-            <div>
+            <div key={root1}>
                 {`The roots of the equation `}
                 <i>{`${a}x`}{<sup>2</sup>}{`+ ${b}x + ${c} = 0`}</i>
                 {` are: `}
