@@ -13,19 +13,19 @@ export const ProvinceList = (props: ProvincesProps) => {
         if (selectedCountry) dispatch(getProvinces({selectedCountry}));
     },[selectedCountry]);
 
-    const renderStateInfo = (info: ProvinceInfo) => (
+    const renderProvinceInfo = (info: ProvinceInfo) => (
         <li key={info.state_code}>
             <b>{info.name} </b>({info.state_code})
         </li>
     );
 
-    const renderStates = (country: ProvincesState["provincesInfo"]) => {
+    const renderProvinces = (country: ProvincesState["provincesInfo"]) => {
         const { states } = country.data;
         if (!selectedCountry) return <div>Select country to view its provinces</div>;
         if (!states.length) return <div>No data available for selected country</div>;
         return (
             <div className={classNames.list}>
-                { country.data.states.map(item => renderStateInfo(item)) }
+                { country.data.states.map(item => renderProvinceInfo(item)) }
             </div>
         );
     };
@@ -34,7 +34,7 @@ export const ProvinceList = (props: ProvincesProps) => {
         <div>
             {errorLoadingProvinces && <div>Error: {errorLoadingProvinces}</div>}
             {isLoadingProvinces && <div>Loading...</div>}
-            {!isLoadingProvinces && renderStates(provincesInfo)}
+            {!isLoadingProvinces && renderProvinces(provincesInfo)}
         </div>
     );
 };
