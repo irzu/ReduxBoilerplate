@@ -1,4 +1,4 @@
-import { getStates } from './provincesApi';
+import { getProvinces } from './provincesApi';
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ProvincesState } from './types';
 
@@ -17,15 +17,15 @@ const provincesSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: {
-        [getStates.pending.type]: (state) => {
+        [getProvinces.pending.type]: (state) => {
             state.isLoadingProvinces = true;
             state.errorLoadingProvinces = '';
         },
-        [getStates.fulfilled.type]: (state, action: PayloadAction<ProvincesState["provincesInfo"]>) => {
+        [getProvinces.fulfilled.type]: (state, action: PayloadAction<ProvincesState["provincesInfo"]>) => {
             state.isLoadingProvinces = false;
             state.provincesInfo = action.payload;
         },        
-        [getStates.rejected.type]: (state, action) => {
+        [getProvinces.rejected.type]: (state, action) => {
             state.isLoadingProvinces = false;
             state.errorLoadingProvinces = action.payload ? action.payload.response.statusText : action.error.message;
         }

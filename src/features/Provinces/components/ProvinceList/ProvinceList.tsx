@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../store';
-import { getStates } from '../../provincesApi';
+import { getProvinces } from '../../provincesApi';
 import { ProvincesState, ProvincesProps, ProvinceInfo } from '../../types';
 import classNames from './ProvinceList.module.css';
 
@@ -10,7 +10,7 @@ export const ProvinceList = (props: ProvincesProps) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        if (selectedCountry) dispatch(getStates({selectedCountry}));
+        if (selectedCountry) dispatch(getProvinces({selectedCountry}));
     },[selectedCountry]);
 
     const renderStateInfo = (info: ProvinceInfo) => (
