@@ -11,7 +11,13 @@ const initialState: SolverState = {
 const solverSlice = createSlice({
     name: 'solver',
     initialState,
-    reducers: {},
+    reducers: {
+        // getSolution(state, action:PayloadAction<EquationParams>) {
+        //     const { a, b, c } = action.payload;
+        //     const result = solveEquation(a, b, c);
+        //     state.solutions.push({...result, a, b, c});
+        // },
+    },
     extraReducers: {
         [getSolutionAsync.pending.type]: (state) => {
             state.isProcessing = true;
@@ -28,4 +34,5 @@ const solverSlice = createSlice({
     }
 });
 
+// export const { getSolution } = solverSlice.actions;
 export default solverSlice.reducer;
