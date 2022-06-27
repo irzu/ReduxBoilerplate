@@ -25,13 +25,8 @@ export const solveEquation = (a: number, b: number, c: number): EquationResult =
 const solveEquationAsync = (a: number, b: number, c: number) => { 
     return new Promise<EquationResult>((resolve, reject) => {
         setTimeout(() => {
-            if (Math.random() > 0.3) {
-                const result = solveEquation(a,b,c);
-                return resolve(result);
-            }
-            else {
-                reject(new Date().getMilliseconds());
-            }
+            const result = solveEquation(a,b,c);
+            return resolve(result);
         }, 2000);
     });
 };
