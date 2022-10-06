@@ -12,16 +12,16 @@ describe("Test HelloWorld App", () => {
         store = createTestStore();
     });
 
-    test('renders empty hello message', async() => {
+    it('renders empty hello message', async() => {
         const { getByTestId } = render(        
             <Provider store={store}>
                 <HelloWorld />
             </Provider>
         );
-        expect(getByTestId('welcome-message')).toBeInTheDocument();
+        expect(getByTestId('welcome-message')).toContainHTML('');
     });
 
-    test('renders personalized hello message ', async() => {
+    it('renders personalized hello message ', async() => {
         await store.dispatch(setName('TestUser'));
         const { getByTestId } = render(        
             <Provider store={store}>
