@@ -1,3 +1,3 @@
-export type HelloWorldState = {
+export interface HelloWorldState {
     userName: string
 }

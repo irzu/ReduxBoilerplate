@@ -9,11 +9,11 @@ export const SolutionDisplay = () => {
         const { a, b, c, root1, root2 } = solution;
 
         return (
-            <div key={root1}>
-                {`The roots of the equation `}
-                <i>{`${a}x`}{<sup>2</sup>}{`+ ${b}x + ${c} = 0`}</i>
-                {` are: `}
-                <b>{`${root1}`}</b> and <b>{`${root2}`}</b>
+            <div key={root1} data-testid="solution">
+                {`The equation `}
+                <b>{`${a}x`}{<sup>2</sup>}{`+ ${b}x + ${c} = 0`}</b>
+                {root2 ? ` has two roots: ` : ` has one root: `}
+                <b>{`${root1} ${root2 ? ` and ${root2}` : ``}`}</b>
             </div>
         );
     };

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Solution, SolverState } from "./types";
-import { getSolutionAsync } from './common/utils/solutionProcessor';
+import { getSolutionAsync } from './solverAPI';
 
 const initialState: SolverState = {
     solutions: [],
