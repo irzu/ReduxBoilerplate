@@ -17,10 +17,12 @@ const App = () => {
                     <div className='row'>
                         <div className="col-sm-4">
                             <h4>Countries</h4>
+                            <hr/>
                             <CountriesList/>
                         </div>
                         <div className="col-sm-8">
                             <h4>Provinces/states</h4>
+                            <hr/>
                             <ProvinceList/>
                         </div>
                     </div>

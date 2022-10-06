@@ -8,13 +8,13 @@ export const ProvinceList = () => {
     const { provincesInfo, isLoadingProvinces, errorLoadingProvinces } = useAppSelector(state => state.provinces);
     const { selectedCountry } = useAppSelector(state => state.countries);
     const dispatch = useAppDispatch();
-
+    
     useEffect(() => {
         if (selectedCountry) dispatch(getProvinces({selectedCountry}));
     },[selectedCountry]);
 
     const renderProvinceInfo = (info: ProvinceInfo) => (
-        <li key={info.state_code}>
+        <li key={info.state_code} data-testid="province-item">
             <b>{info.name} </b>({info.state_code})
         </li>
     );
@@ -32,8 +32,8 @@ export const ProvinceList = () => {
     
     return (
         <div>
-            {errorLoadingProvinces && <div>Error: {errorLoadingProvinces}</div>}
-            {isLoadingProvinces && <div>Loading...</div>}
+            {errorLoadingProvinces && <div data-tesid="error">Error: {errorLoadingProvinces}</div>}
+            {isLoadingProvinces && <div data-testid="loading">Loading...</div>}
             {!isLoadingProvinces && renderProvinces(provincesInfo)}
         </div>
     );
