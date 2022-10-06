@@ -1,4 +1,4 @@
-export type Country = {
+export interface Country {
     abbreviation: string,
     capital: string,
     currency: string,
@@ -13,8 +13,14 @@ export type Country = {
     id: number
 }
 
-export type CountriesState = {
+export interface CountriesState {
     countries: Country[],
     isLoadingCountries: boolean,
     errorLoadingCountries: string
+}
+
+export interface ResponseError {
+    response?: {
+        statusText: string
+    }
 }

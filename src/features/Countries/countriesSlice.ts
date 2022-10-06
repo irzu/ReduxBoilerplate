@@ -1,6 +1,6 @@
 import { getCountries } from './countriesAPI';
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CountriesState, Country } from './types';
+import { CountriesState, Country, ResponseError } from './types';
 
 const initialState: CountriesState = {
     countries: [],
@@ -21,7 +21,7 @@ const countriesSlice = createSlice({
             state.isLoadingCountries = false;
             state.countries = action.payload.sort((a,b) => (a.name > b.name) ? 1 : -1);
         },        
-        [getCountries.rejected.type]: (state, action) => {
+        [getCountries.rejected.type]: (state, action: PayloadAction<ResponseError, never, never, Error>) => {
             state.isLoadingCountries = false;
             state.errorLoadingCountries = action.payload ? action.payload.response.statusText : action.error.message;
         }
