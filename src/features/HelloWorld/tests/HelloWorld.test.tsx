@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { HelloWorld } from './HelloWorld';
-import { createTestStore } from '../../../../common/utils/testUtils';
-import { setName } from '../../helloWorldSlice';
+import { HelloWorld } from '../components/HelloWorld/HelloWorld';
+import { createTestStore } from '../../../common/utils/testUtils';
+import { setName } from '../helloWorldSlice';
 
 let store;
 
