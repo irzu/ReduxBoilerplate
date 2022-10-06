@@ -24,7 +24,15 @@ export const EquationInput = () => {
             </div>
             <button 
                 className='btn btn-primary mt-3'
-                onClick={() => dispatch(getSolution({a: Number(inputState.a), b: Number(inputState.b), c: Number(inputState.c)}))} 
+                onClick={() => dispatch(
+                    getSolution(
+                        {
+                            a: Number(inputState.a), 
+                            b: Number(inputState.b), 
+                            c: Number(inputState.c),
+                        }
+                    )
+                )} 
                 disabled={!inputState.a || !inputState.b || !inputState.c}
             >
                 Solve!
