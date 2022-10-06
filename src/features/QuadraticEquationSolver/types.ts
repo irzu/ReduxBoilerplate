@@ -1,18 +1,17 @@
-export type EquationParams = {
+export interface EquationParams {
     a: number,
     b: number,
     c: number
-};
+}
 
-export type EquationResult = {
+export interface EquationResult {
     root1: string,
     root2: string
-};
+}
 
-export type Solution = EquationParams & EquationResult;
-
-export type SolverState = {
+export interface Solution extends EquationParams, EquationResult {}
+export interface SolverState {
     solutions: Solution[],
     isProcessing: boolean,
     processingError: string
-};
+}

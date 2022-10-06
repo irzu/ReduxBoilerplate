@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../store';
-import { getSolutionAsync } from '../../common/utils/solutionProcessor';
+import { getSolutionAsync } from '../../solverAPI';
 
 export const EquationInput = () => {
     const [ inputState, setInputState ] = useState({a: '', b: '', c: ''});
@@ -35,7 +35,15 @@ export const EquationInput = () => {
             </div>
             <button 
                 className='btn btn-primary mt-3'
-                onClick={() => dispatch(getSolutionAsync({a: Number(inputState.a), b: Number(inputState.b), c: Number(inputState.c)}))} 
+                onClick={() => dispatch(
+                    getSolutionAsync(
+                        {
+                            a: Number(inputState.a), 
+                            b: Number(inputState.b), 
+                            c: Number(inputState.c),
+                        }
+                    )
+                )} 
                 disabled={!inputState.a || !inputState.b || !inputState.c}
             >
                 Solve!

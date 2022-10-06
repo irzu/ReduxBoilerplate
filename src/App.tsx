@@ -3,11 +3,9 @@ import React from "react";
 // import { Solver } from "./features/QuadraticEquationSolver/components/Solver/Solver";
 import { CountriesList } from "./features/Countries/components/CountriesList/CountriesList";
 import { ProvinceList } from "./features/Provinces/components/ProvinceList/ProvinceList";
-import { useAppSelector } from "./store";
 import './App.css';
 
 const App = () => {
-    const { selectedCountry } = useAppSelector(state => state.countries);
 
     return (
         <>
@@ -22,8 +20,8 @@ const App = () => {
                             <CountriesList/>
                         </div>
                         <div className="col-sm-8">
-                            <h4>Provinces/states {selectedCountry ? `of ${selectedCountry}` : ''}</h4>
-                            <ProvinceList selectedCountry={selectedCountry}/>
+                            <h4>Provinces/states</h4>
+                            <ProvinceList/>
                         </div>
                     </div>
                 </div>
