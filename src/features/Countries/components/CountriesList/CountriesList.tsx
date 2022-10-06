@@ -13,7 +13,7 @@ export const CountriesList = () => {
     const dispatch = useAppDispatch();
 
     const renderCountryInfo = (country: CountryType) => (
-        <div className={classNames.item} key={country.id}>
+        <div className={classNames.item} key={country.id} data-testid="country-info">
             <div className={`col-sm-3 ${classNames.subItem}`}>
                 <img width={30} src={country.media.flag} alt="flag" style={{marginBottom:20}} />
             </div>
@@ -23,7 +23,7 @@ export const CountriesList = () => {
             </div>
         </div>
     );
-    
+
     return (
         <div className={classNames.wrapper}>
             {errorLoadingCountries && <div>Error: {errorLoadingCountries}</div>}
