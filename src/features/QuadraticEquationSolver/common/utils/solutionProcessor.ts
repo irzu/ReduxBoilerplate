@@ -1,17 +1,16 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { EquationParams, EquationResult } from '../../types';
+import { EquationResult } from '../../types';
 
 export const solveEquation = (a: number, b: number, c: number): EquationResult => {
     const delta = b * b - 4 * a * c;
 
+    if (delta === 0) return {
+        root1: (-b / (2 * a)).toString(),
+        root2: ''
+    };
+
     if (delta > 0) return { 
         root1: ((-b + Math.sqrt(delta)) / (2 * a)).toString(), 
         root2: ((-b - Math.sqrt(delta)) / (2 * a)).toString()
-    };
-    
-    if (delta === 0) return {
-        root1: (-b / (2 * a)).toString(),
-        root2: (-b / (2 * a)).toString()
     };
     
     const realPart = (-b / (2 * a)).toFixed(2);
@@ -22,7 +21,7 @@ export const solveEquation = (a: number, b: number, c: number): EquationResult =
     }; 
 };
 
-const solveEquationAsync = (a: number, b: number, c: number) => { 
+export const solveEquationAsync = (a: number, b: number, c: number) => { 
     return new Promise<EquationResult>((resolve, reject) => {
         setTimeout(() => {
             const result = solveEquation(a,b,c);
@@ -31,15 +30,3 @@ const solveEquationAsync = (a: number, b: number, c: number) => {
     });
 };
 
-export const getSolutionAsync = createAsyncThunk(
-    'solver/getSolutionAsync',
-    async(payload: EquationParams, thunkAPI) => {
-        const { a, b, c } = payload;
-        try {
-            const response = await solveEquationAsync(a,b,c);
-            return {...payload, ...response};
-        } catch (error) {
-            return thunkAPI.rejectWithValue(error);
-        }
-    }
-);
