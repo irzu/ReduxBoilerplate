@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../store';
 import { getProvinces } from '../../provincesApi';
-import { ProvincesState, ProvincesProps, ProvinceInfo } from '../../types';
+import { ProvincesState, ProvinceInfo } from '../../types';
 import classNames from './ProvinceList.module.css';
 
-export const ProvinceList = (props: ProvincesProps) => {
-    const { selectedCountry } = props;
+export const ProvinceList = () => {
     const { provincesInfo, isLoadingProvinces, errorLoadingProvinces } = useAppSelector(state => state.provinces);
+    const { selectedCountry } = useAppSelector(state => state.countries);
     const dispatch = useAppDispatch();
 
     useEffect(() => {

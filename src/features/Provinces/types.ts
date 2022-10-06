@@ -1,9 +1,9 @@
-export type ProvinceInfo = {
+export interface ProvinceInfo {
     name: string,
     state_code: string
 }
 
-export type ProvincesState = {
+export interface ProvincesState {
     provincesInfo: {
         data: {
             states: ProvinceInfo[]
@@ -13,6 +13,6 @@ export type ProvincesState = {
     errorLoadingProvinces: string
 }
 
-export type ProvincesProps = {
+export interface ProvincesProps {
     selectedCountry?: string
 }

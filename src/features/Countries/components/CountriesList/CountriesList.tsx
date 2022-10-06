@@ -14,7 +14,7 @@ export const CountriesList = () => {
     const dispatch = useAppDispatch();
 
     const renderCountryInfo = (country: CountryType) => (
-        <div className={classNames.item} key={country.id} data-testid="country-info">
+        <div className={classNames.item} key={country.id} data-testid="country-info" onClick={() => dispatch(setSelectedCountry(country.name))}>
             <div className={`col-sm-3 ${classNames.subItem}`}>
                 <img width={30} src={country.media.flag} alt="flag" style={{marginBottom:20}} />
             </div>
@@ -26,7 +26,7 @@ export const CountriesList = () => {
     );
 
     return (
-        <div className={classNames.wrapper}>
+        <div>
             {errorLoadingCountries && <div>Error: {errorLoadingCountries}</div>}
             {isLoadingCountries && <div>Loading...</div>}
             <div className={classNames.list}>
