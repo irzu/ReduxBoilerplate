@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { createTestStore } from '../../../../../common/utils/testUtils';
-import { getSolution } from '../../../solverSlice';
-import { SolutionDisplay } from '../../../components/SolutionDisplay/SolutionDisplay';
+import { createTestStore } from '../../../common/utils/testUtils';
+import { getSolution } from '../solverSlice';
+import { SolutionDisplay } from '../components/SolutionDisplay/SolutionDisplay';
 
 let store;
 
