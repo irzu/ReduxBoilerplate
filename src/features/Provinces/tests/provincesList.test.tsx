@@ -6,7 +6,7 @@ import { ProvinceList } from '../components/ProvinceList/ProvinceList';
 import { setSelectedCountry } from '../../Countries/countriesSlice';
 
 let store;
-jest.setTimeout(20000)
+jest.setTimeout(20000);
 
 describe("Test provinces list", () => {
     beforeEach(() => {
