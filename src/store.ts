@@ -2,15 +2,11 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import helloWorldReducer from './features/HelloWorld/helloWorldSlice';
-// import solverReducer from './features/QuadraticEquationSolver/solverSlice';
-// import countriesReducer from './features/Countries/countriesSlice';
-// import provincesReducer from './features/Provinces/provincesSlice';
+import solverReducer from './features/QuadraticEquationSolver/solverSlice';
 
 const reducer = {
     helloWorld: helloWorldReducer,
-    // solver: solverReducer,
-    // countries: countriesReducer,
-    // provinces: provincesReducer
+    solver: solverReducer,
 };
 
 const devTools = process.env.NODE_ENV === "development" ? [logger]: [];
