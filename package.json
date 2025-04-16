@@ -1,4 +1,18 @@
-{
+{  
+  "version": "2.0.0",
+  "name": "redux-boilerplate",
+  "description": "Simple yet powerful boilerplate for rapid app development, based on react, redux and redux-toolkit, written in typescript.",
+  "homepage": "https://github.com/irzu/ReduxBoilerplate",
+  "author": "Irek Żuchowski <irek@atarnia.com>",
+  "main": "src/index.tsx",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "start": "vite",
+    "test": "vitest"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
     "react": "^19.0.0",
@@ -24,16 +38,5 @@
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0",
     "vitest": "^3.1.1"
-  },
-  "name": "react-vite-starter",
-  "private": true,
-  "scripts": {
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "start": "vite",
-    "test": "vitest"
-  },
-  "type": "module",
-  "version": "2.0.0"
+  }
 }
