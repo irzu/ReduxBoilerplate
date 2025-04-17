@@ -1,4 +1,4 @@
-import { EquationResult } from '../../types';
+import { EquationResult } from '../types';
 
 export const solveEquation = (a: number, b: number, c: number): EquationResult => {
     const delta = b * b - 4 * a * c;
