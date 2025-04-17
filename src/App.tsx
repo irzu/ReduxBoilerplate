@@ -2,6 +2,7 @@ import { HelloWorld } from "./features/HelloWorld/components/HelloWorld/HelloWor
 import './App.css';
 import { SolverApp } from "./features/QuadraticEquationSolver/components/SolverApp/SolverApp";
 import { SolverAppAsync } from "./features/QuadraticEquationSolverAsync/components/SolverAppAsync/SolverAppAsync";
+import { CountriesList } from "./features/CountriesList/components/CountriesList/CountriesList";
 
 const App = () => {
     return (
@@ -11,6 +12,7 @@ const App = () => {
                 <HelloWorld/>
                 <SolverApp />
                 <SolverAppAsync />
+                <CountriesList />
             </div>
         </>
     );

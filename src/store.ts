@@ -4,11 +4,13 @@ import logger from 'redux-logger';
 import helloWorldReducer from './features/HelloWorld/helloWorldSlice';
 import solverReducer from './features/QuadraticEquationSolver/solverSlice';
 import solverAsyncReducer from './features/QuadraticEquationSolverAsync/solverAsyncSlice';
+import countriesReducer from './features/CountriesList/countriesSlice'
 
 const reducer = {
     helloWorld: helloWorldReducer,
     solver: solverReducer,
-    solverAsync: solverAsyncReducer
+    solverAsync: solverAsyncReducer,
+    countries: countriesReducer
 };
 
 const devTools = process.env.NODE_ENV === "development" ? [logger]: [];
