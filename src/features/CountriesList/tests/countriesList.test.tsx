@@ -1,16 +1,11 @@
-import React from 'react';
 import { render, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { createTestStore } from '../../../common/utils/testUtils';
 import { getCountries } from '../countriesAPI';
 import { CountriesList } from '../components/CountriesList/CountriesList';
+import { store } from '../../../store';
 
-let store;
 
 describe("Test countries list", () => {
-    beforeEach(() => {
-        store = createTestStore();
-    });
 
     it('renders countries list with 250 entries', async() => {
         await store.dispatch(getCountries());
