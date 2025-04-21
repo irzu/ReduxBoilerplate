@@ -1,54 +1,62 @@
-# React + TypeScript + Vite
+# redux-toolkit tutorial based on vite-react boilerplate
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+* Typescript
+* React
+* Redux
+* Redux-toolkit
+* Testing library
+* Eslint
+* Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Practical examples of small apps, easy to read and write have been included to allow better understanding on how the whole stack works. The tutorial is divided into parts to introduce concepts gradually. To follow the tutorial, start from branch `chapter1-HelloWorld` and move along by switching branches
 
-## Expanding the ESLint configuration
+## Part 1
+### Branch: `chapter1-HelloWorld`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Hello world app that accepts your name as a param.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+#### Key concepts:
+
+* Redux toolkit app structure convention
+* Redux store and slice of state
+* Defining reducers and actions
+* Accessing state and dispatching actions from components
+* Introducing unit tests
+
+## Part 2
+### Branch: `chapter2-EquationSolver`
+
+Simple quadratic equations solver
+
+#### Key concepts:
+* Extending the app by adding new features 
+* Combining reducers from multiple features
+
+## Part 3
+### Branch: `chapter3-EquationSolverAsync`
+
+Extension of the quadratic equations solver from Part 2 introducing asynchronous requests. 
+
+#### Key concepts:
+* Using redux-toolkit helpers to handle asynchronous requests
+* Introduce `extraReducers` in state slice
+* Utilizing `pending`, `resolved` and `rejected` promise states in components
+
+## Part 4
+### Branch: `chapter4-CountriesList`
+
+An app displaying simple country information (name, capital and flag) retrieved from external data source
+
+#### Key concepts:
+* Use the knowledge on how to handle async requests from Part 3 to perform api calls
+* Handle network errors
+
+# Installation
+## Running dev server locally
+
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+npm install
+npm start
 ```
