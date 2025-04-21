@@ -9,9 +9,13 @@ export interface EquationResult {
     root2: string
 }
 
-export interface Solution extends EquationParams, EquationResult {}
+export interface Solution extends EquationParams, EquationResult {
+    index: number;
+
+}
+
 export interface SolverState {
-    solutions: Solution[],
-    isProcessing: boolean,
-    processingError: string
+    solutions: Solution[];
+    error: string;
+    isProcessing?: boolean;
 }

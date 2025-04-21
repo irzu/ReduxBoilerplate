@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../../../store';
-import { Solution } from '../../types';
+import { Solution } from '../../../../common/types/types';
 
 export const SolutionDisplay = () => {
     const { solutions, error } = useAppSelector(state => state.solver);

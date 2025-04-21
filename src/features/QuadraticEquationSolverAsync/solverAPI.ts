@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { EquationParams } from '../../common/types/types';
 import { solveEquationAsync } from './common/utils/solutionProcessor';
-import { EquationParams } from './types';
 
 export const getSolutionAsync = createAsyncThunk(
     'solver/getSolutionAsync',

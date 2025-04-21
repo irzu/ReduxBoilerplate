@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { EquationParams, SolverState } from "./types";
+import { EquationParams, SolverState } from "../../common/types/types";
 import { solveEquation } from './utils/solutionProcessor';
 
 const initialState: SolverState = {
