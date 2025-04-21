@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { TestProvider } from '../../../../common/utils/testProvider';
-import { store } from '../../../../store';
-import { SolutionDisplay } from '../../components/SolutionDisplay/SolutionDisplay';
-import { getSolution } from '../../solverSlice';
+import { SolutionDisplay } from '../../../features/QuadraticEquationSolver/components/SolutionDisplay/SolutionDisplay';
+import { getSolution } from '../../../features/QuadraticEquationSolver/solverSlice';
+import { store } from '../../../store';
+import { TestProvider } from '../testProvider';
+
 
 describe("Test Quadratic Equation solver App", () => {
 

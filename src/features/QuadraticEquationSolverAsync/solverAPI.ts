@@ -6,7 +6,7 @@ export const solveEquationAsync = (a: number, b: number, c: number) => {
     return new Promise<EquationResult>((resolve, reject) => {
         setTimeout(() => {
             //Uncomment line below to demo error handling
-            if (Math.random() > 0.6) reject('Server error')
+            if (Math.random() > 0.5) reject('Server error')
             const result = solveEquation(a,b,c);
             return resolve(result);
         }, 2000);
