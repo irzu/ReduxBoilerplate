@@ -1,4 +1,4 @@
-# react-redux-typescript boilerplate and tutorial
+# redux-toolkit tutorial based on vite-react boilerplate
 
 This tutorial introduces a simple boilerplate featuring a community opinionated stack including:
 
