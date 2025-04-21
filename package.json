@@ -1,4 +1,4 @@
-{  
+{
   "version": "2.0.0",
   "name": "redux-boilerplate",
   "description": "Simple yet powerful boilerplate for rapid app development, based on react, redux and redux-toolkit, written in typescript.",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
+    "axios": "^1.8.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0"
