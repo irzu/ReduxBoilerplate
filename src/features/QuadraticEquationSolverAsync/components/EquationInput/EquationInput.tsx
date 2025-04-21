@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../store';
-import { getSolutionAsync } from '../../solverAsyncAPI';
+import { getSolutionAsync } from '../../solverAPI';
 
 export const EquationInput = () => {
     const [ inputState, setInputState ] = useState({a: '', b: '', c: ''});
-    const { isProcessing, processingError } = useAppSelector(state => state.solverAsync);
+    const { isProcessing, error } = useAppSelector(state => state.solverAsync);
     const dispatch = useAppDispatch();
 
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -18,7 +18,7 @@ export const EquationInput = () => {
 
     const renderErrorMessage = () => (
         <div className='mt-3 text-danger'>
-            {`Error: ${processingError}`}
+            {`Calculation failed: ${error}`}
         </div>
     );
 
@@ -50,7 +50,7 @@ export const EquationInput = () => {
             </button>
             <div>
                 { isProcessing && renderLoadingMessage() }
-                { processingError && renderErrorMessage() }
+                { error && renderErrorMessage() }
             </div>
         </div>
     );

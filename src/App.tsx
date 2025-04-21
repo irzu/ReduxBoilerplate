@@ -1,8 +1,8 @@
-import { HelloWorld } from "./features/HelloWorld/components/HelloWorld/HelloWorld";
 import './App.css';
+import { CountriesList } from "./features/CountriesList/components/CountriesList/CountriesList";
+import { HelloWorld } from "./features/HelloWorld/components/HelloWorld/HelloWorld";
 import { SolverApp } from "./features/QuadraticEquationSolver/components/SolverApp/SolverApp";
 import { SolverAppAsync } from "./features/QuadraticEquationSolverAsync/components/SolverAppAsync/SolverAppAsync";
-import { CountriesList } from "./features/CountriesList/components/CountriesList/CountriesList";
 
 const App = () => {
     return (

@@ -1,14 +1,14 @@
+import { Solution } from '../../../../common/types/types';
 import { useAppSelector } from '../../../../store';
-import { Solution } from '../../types';
 
 export const SolutionDisplay = () => {
     const { solutions } = useAppSelector(state => state.solverAsync);
 
     const renderSolution = (solution: Solution) => {
-        const { a, b, c, root1, root2 } = solution;
+        const { a, b, c, root1, root2, index} = solution;
 
         return (
-            <div key={root1}>
+            <div key={`solution-${index}`}>
                 {`The equation `}
                 <b>{`${a}x`}{<sup>2</sup>}{`+ ${b}x + ${c} = 0`}</b>
                 {root2 ? ` has two roots: ` : ` has one root: `}

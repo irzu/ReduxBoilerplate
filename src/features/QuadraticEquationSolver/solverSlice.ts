@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { EquationParams, SolverState } from "./types";
-import { solveEquation } from './common/utils/solutionProcessor';
+import { EquationParams, SolverState } from "../../common/types/types";
+import { solveEquation } from '../../common/utils/solutionProcessor';
 
 const initialState: SolverState = {
     solutions: [],
+    error: ''
 };
 
 const solverSlice = createSlice({
@@ -12,8 +13,14 @@ const solverSlice = createSlice({
     reducers: {
         getSolution(state, action:PayloadAction<EquationParams>) {
             const { a, b, c } = action.payload;
-            const result = solveEquation(a, b, c);
-            state.solutions.push({...result, a, b, c});
+            if (state.solutions.find(item => item.a === a && item.b === b && item.c === c)) {
+                state.error = 'Solution for given params already exists'
+            }
+            else {
+                const result = solveEquation(a, b, c);
+                state.solutions.push({...result, a, b, c, index: state.solutions.length});
+                state.error = initialState.error;
+            }
         },
     },
 });

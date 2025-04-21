@@ -1,10 +1,10 @@
+import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
+import countriesReducer from './features/CountriesList/countriesSlice';
 import helloWorldReducer from './features/HelloWorld/helloWorldSlice';
 import solverReducer from './features/QuadraticEquationSolver/solverSlice';
 import solverAsyncReducer from './features/QuadraticEquationSolverAsync/solverAsyncSlice';
-import countriesReducer from './features/CountriesList/countriesSlice'
 
 const reducer = {
     helloWorld: helloWorldReducer,
