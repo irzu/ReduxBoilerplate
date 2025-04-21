@@ -14,9 +14,9 @@ This tutorial introduces a simple boilerplate featuring a community opinionated 
 Practical examples of small apps, easy to read and write have been included to allow better understanding on how the whole stack works. The tutorial is divided into parts to introduce concepts gradually. To follow the tutorial, start from branch `chapter1-HelloWorld` and move along by switching branches
 
 ## Part 1
-### Branch: chapter1-HelloWorld
+### Branch: `chapter1-HelloWorld`
 
-A `Hello world` app that accepts your name as a param.
+Hello world app that accepts your name as a param.
 
 #### Key concepts:
 
@@ -27,7 +27,7 @@ A `Hello world` app that accepts your name as a param.
 * Introducing unit tests
 
 ## Part 2
-### Branch: chapter2-EquationSolver
+### Branch: `chapter2-EquationSolver`
 
 Simple quadratic equations solver
 
@@ -36,7 +36,7 @@ Simple quadratic equations solver
 * Combining reducers from multiple features
 
 ## Part 3
-### Branch: chapter3-EquationSolverAsync
+### Branch: `chapter3-EquationSolverAsync`
 
 Extension of the quadratic equations solver from Part 2 introducing asynchronous requests. 
 
@@ -46,7 +46,7 @@ Extension of the quadratic equations solver from Part 2 introducing asynchronous
 * Utilizing `pending`, `resolved` and `rejected` promise states in components
 
 ## Part 4
-### Branch: chapter4-CountriesList
+### Branch: `chapter4-CountriesList`
 
 An app displaying simple country information (name, capital and flag) retrieved from external data source
 
