@@ -1,6 +1,6 @@
 # redux-toolkit tutorial based on vite-react boilerplate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This tutorial introduces a simple boilerplate featuring a community opinionated stack including:
 
 * Typescript
 * React
