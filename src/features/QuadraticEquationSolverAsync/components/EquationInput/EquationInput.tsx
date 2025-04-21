@@ -18,7 +18,7 @@ export const EquationInput = () => {
 
     const renderErrorMessage = () => (
         <div className='mt-3 text-danger'>
-            {`Calculation failed. Error code: ${error}`}
+            {`Calculation failed: ${error}`}
         </div>
     );
 

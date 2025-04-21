@@ -1,4 +1,4 @@
-import { EquationResult } from '../../types';
+import { EquationResult } from '../types/types';
 
 export const solveEquation = (a: number, b: number, c: number): EquationResult => {
     const delta = b * b - 4 * a * c;
@@ -20,13 +20,3 @@ export const solveEquation = (a: number, b: number, c: number): EquationResult =
         root2: `${realPart} - ${imagPart}i`
     }; 
 };
-
-export const solveEquationAsync = (a: number, b: number, c: number) => { 
-    return new Promise<EquationResult>((resolve, reject) => {
-        setTimeout(() => {
-            const result = solveEquation(a,b,c);
-            return resolve(result);
-        }, 2000);
-    });
-};
-

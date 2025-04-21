@@ -1,6 +1,6 @@
 import { EquationInput } from '../EquationInput/EquationInput';
 import { SolutionDisplay } from '../SolutionDisplay/SolutionDisplay';
-import classNames from './Solver.module.css';
+import classNames from '../../../../common/styles/SolverApp.module.css'
 
 export const SolverAppAsync = () => (
     <div className={classNames.wrapper}>
